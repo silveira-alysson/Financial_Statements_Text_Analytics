@@ -28,7 +28,7 @@ The SEC quarterly updates the Financial Statement and Notes Data Sets that reuni
 
 #### Importing SEC files as pandas dataset and storing as a pickle file
 
-Run the [Import_Textual_Data.ipynb](./Import_Textual_Data.ipynb) notebook.
+Run [Import_Textual_Data.ipynb](./Import_Textual_Data.ipynb) notebook.
 Depending on the time range of the analysis, this step can take a while to be completed.
 
 #### Importing SEC files as pandas dataset and storing as a pickle file
@@ -56,4 +56,27 @@ df_companies = sf.load_companies(index=TICKER, market='us')
 df_industries = sf.load_industries()
 ```
 
+#### Text pre-processing and merge with numerical data
+
+Run [Merge_Financial_Textual_Data.ipynb](./Merge_Financial_Textual_Data.ipynb) notebook.
+Text pre-processing can take a while, specially word2vec.
+When running the notebook again, you can skip (comment) the following commands:
+```
+model = Word2Vec(token_list, size=300, window=5, min_count=2, sample=1e-3, sg=1, iter=5)
+```
+```
+model.save("word2vec.model")
+```
+
+
+and uncomment the following line to import the word2vec previously saved model.
+
+```
+#model = Word2Vec.load("word2vec.model")
+```
+```
+#word_vectors = model.wv
+```
+
+I you have any trouble using these notebooks, please e-mail me at alysson@usf.edu
 
