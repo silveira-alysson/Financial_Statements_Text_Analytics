@@ -38,7 +38,6 @@ sf.set_api_key(api_key='free')
 df_income = sf.load_income(variant='annual', market='us')
 df_balance = sf.load_balance(variant='annual', market='us')
 df_cashflow = sf.load_cashflow(variant='annual', market='us')
-
 ```
 
 You can also download a list of companies with their respective tickers and the companies' industry segments.
@@ -46,7 +45,6 @@ You can also download a list of companies with their respective tickers and the 
 ```
 df_companies = sf.load_companies(index=TICKER, market='us')
 df_industries = sf.load_industries()
-
 ```
 
 
