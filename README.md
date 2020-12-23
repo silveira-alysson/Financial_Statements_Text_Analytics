@@ -4,10 +4,11 @@ Application of NLP on financial statements to predict corporate future success
 ## About
 This work proposed to verify if the use of features derived from textual data, when combined with commonly used financial ratios, can help to make better predictions on corporate financial performance. We applied different machine learning techniques using 10-K fillings of US-based companies from 2012 to 2019.
 
-## Downloading the required data sets
+## Data sets
 Two sources of data were used:
 
 ### Textual data
+#### Downloading and organizing SEC files
 The SEC quarterly updates the Financial Statement and Notes Data Sets that reunites all textual and numerical data from financial statements, including notes sections (https://www.sec.gov/dera/data/financial-statement-and-notes-data-set.html). Download the data sets that covers the period relevant to the analysis. After creating a new folder to store the target data, unzip the dowloaded folders and extract only the sub.tsv and txt.tsv files for each quarter. Rename each file using the following scheme: **Year_Quarter_OriginalFileName.Extension** (i.e. 2012_Q1_sub.tsv).
 ```
 2012_Q1_sub.tsv
@@ -24,6 +25,14 @@ The SEC quarterly updates the Financial Statement and Notes Data Sets that reuni
 .
 .
 ``` 
+
+#### Importing SEC files as pandas dataset and storing as a pickle file
+
+Run the [Import_Textual_Data.ipynb](./Import_Textual_Data.ipynb) notebook.
+Depending on the time range of the analysis, this step can take a while to be completed.
+
+#### Importing SEC files as pandas dataset and storing as a pickle file
+
 
 ### Financial data
 The numerical data was acquired via the SimFin API (https://simfin.com/), that can be installed using the `!pip install simfin` command.
