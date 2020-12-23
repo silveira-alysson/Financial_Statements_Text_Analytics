@@ -78,5 +78,5 @@ and uncomment the following line to import the word2vec previously saved model.
 #word_vectors = model.wv
 ```
 
-I you have any trouble using these notebooks, please e-mail me at alysson@usf.edu
+I you face any trouble using these notebooks, please e-mail me at alysson@usf.edu
 
